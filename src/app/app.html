@@ -1,0 +1,14 @@
+<ion-menu [content]="content" persistent="true">
+	<ion-content>
+		<ion-list>
+			<button *ngFor="let page of pages" ion-item menuClose (click)="openPage( page )">
+				{{ page.title }}
+			</button>
+		</ion-list>
+	</ion-content>
+</ion-menu>
+<ion-nav #content [root]="rootPage">
+	<button ion-button menuToggle icon-only>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+</ion-nav>
